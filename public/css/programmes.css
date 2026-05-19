@@ -1,0 +1,382 @@
+
+
+/* ---- Section programmes ---- */
+
+.programmes-section {
+    padding: 60px 40px;
+    background-color: var(--color-noir);
+    min-height: calc(100vh - 90px);
+}
+
+/* ---- Header ---- */
+.programmes-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.programmes-header h1 {
+    font-family: var(--font-titre);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-or);
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+}
+.programmes-header p {
+    font-family: var(--font-corps);
+    font-size: 1rem;
+    color: var(--color-texte);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ---- Filtres JS ---- */
+.programmes-filtres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 48px;
+}
+
+.filtre-btn {
+    font-family: var(--font-titre);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 10px 22px;
+    border-radius: var(--border-radius-btn);
+    border: 2px solid var(--color-or);
+    background-color: transparent;
+    color: var(--color-or);
+    cursor: pointer;
+    transition: var(--transition);
+}
+.filtre-btn:hover,
+.filtre-btn--active {
+    background-color: var(--color-or);
+    color: var(--color-noir);
+    transform: translateY(-2px);
+}
+
+/* ---- Grille cards ---- */
+.programmes-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ---- Card programme ---- */
+.programme-card {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    border: 3px solid var(--color-or);
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: var(--color-blanc);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition);
+    position: relative;
+}
+.programme-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Images gauche/droite */
+.programme-card__img-left,
+.programme-card__img-right {
+    width: 220px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+.programme-card__img-left img,
+.programme-card__img-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Contenu central */
+
+.programme-card__body {
+    flex: 1;
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: var(--color-blanc);
+    color: var(--color-noir);
+}
+
+.programme-card__titre-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.programme-card__badge {
+    background-color: var(--color-or);
+    color: var(--color-noir);
+    font-family: var(--font-titre);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: var(--border-radius-btn);
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    position: static;
+    transform: none;
+}
+
+.programme-card__titre {
+    font-family: var(--font-titre);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-noir);
+    letter-spacing: 0.03em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.programme-card__description{
+    text-align: center;
+}
+
+.programme-card__question {
+    font-family: var(--font-titre);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-noir);
+    text-align: center;
+}
+
+.programme-card__liste {
+    list-style: disc;
+    padding-left: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    
+}
+.programme-card__liste li {
+    font-family: var(--font-corps);
+    font-size: 0.95rem;
+    color: var(--color-noir);
+    line-height: 1.6;
+}
+
+.programme-card__accroche {
+    font-family: var(--font-titre);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-noir);
+    text-align: center;
+    margin-top: 8px;
+}
+
+.programme-card__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 16px;
+}
+
+.programme-card__prix {
+    font-family: var(--font-titre);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-noir);
+}
+
+/* Bouton outline sur fond blanc */
+.programme-card .btn--outline {
+    border-color: var(--color-or);
+    color: var(--color-noir);
+    min-width: 200px;
+}
+.programme-card .btn--outline:hover {
+    background-color: var(--color-or);
+    color: var(--color-noir);
+}
+
+/* ---- Page détail ---- */
+.programme-detail-section {
+    padding: 60px 40px;
+    background-color: var(--color-noir);
+    min-height: calc(100vh - 90px);
+}
+
+.programme-detail__section-titre {
+    text-align: center;
+    font-family: var(--font-titre);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-noir);
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+}
+.programme-detail__description{
+    text-align: center;
+    font-weight: bold;
+}
+
+.programme-detail-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--color-or);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    position: relative;
+}
+
+.programme-detail__badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--color-noir);
+    color: var(--color-or);
+    font-family: var(--font-titre);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: var(--border-radius-btn);
+    letter-spacing: 0.05em;
+    z-index: 1;
+}
+
+.programme-detail__images {
+    display: flex;
+    height: 280px;
+    overflow: hidden;
+}
+.programme-detail__img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.programme-detail__body {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.programme-detail__titre {
+    font-family: var(--font-titre);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-noir);
+    letter-spacing: 0.03em;
+    text-align: center;
+}
+
+.programme-detail__question {
+    font-family: var(--font-titre);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-noir);
+}
+
+.programme-detail__liste {
+    list-style: none;
+    padding-left: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    padding-right: 30px;
+}
+.programme-detail__liste li {
+    font-family: var(--font-corps);
+    font-size: 1rem;
+    color: var(--color-noir);
+    line-height: 1.6;
+}
+
+.programme-detail__tarifs {
+    border-top: 2px solid rgba(10,10,10,0.15);
+    padding-top: 20px;
+}
+.programme-detail__tarifs h2 {
+    font-family: var(--font-titre);
+    font-size: 1.2rem;
+    color: var(--color-noir);
+    margin-bottom: 8px;
+}
+.programme-detail__prix {
+    font-family: var(--font-titre);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-noir);
+}
+
+.programme-detail__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 8px;
+}
+
+/* Boutons sur fond doré */
+.programme-detail__actions .btn--primary {
+    background-color: var(--color-noir);
+    color: var(--color-or);
+}
+.programme-detail__actions .btn--primary:hover {
+    background-color: var(--color-gris);
+}
+.programme-detail__actions .btn--outline {
+    border-color: var(--color-noir);
+    color: var(--color-noir);
+}
+.programme-detail__actions .btn--outline:hover {
+    background-color: var(--color-noir);
+    color: var(--color-or);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+    .programmes-section { padding: 40px 20px; }
+    .programmes-header h1 { font-size: 2rem; }
+
+    .programmes-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    /* masquer images  */
+    
+    .programme-card {
+        flex-direction: column;
+    }
+    .programme-card__img-left,
+    .programme-card__img-right {
+        display: none;
+    }
+    .programme-card__body {
+        padding: 24px;
+        text-align: left;
+    }
+
+    .programme-detail-section { padding: 40px 20px; }
+    .programme-detail__images { height: 200px; }
+    .programme-detail__body { padding: 28px 24px; }
+    .programme-detail__titre { font-size: 1.6rem; }
+}
+
+@media (max-width: 480px) {
+    .programmes-filtres { gap: 8px; }
+    .filtre-btn {
+        font-size: 0.8rem;
+        padding: 8px 16px;
+    }
+}

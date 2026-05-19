@@ -1,0 +1,96 @@
+/* =============================================================
+   QUESTIONNAIRE-ADMIN.CSS — Vue lecture questionnaire client
+============================================================= */
+
+.qadmin-container {
+    max-width: 900px;
+    margin: 24px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.qadmin-empty {
+    font-family: var(--font-corps);
+    color: var(--color-texte);
+    padding: 20px 0;
+}
+
+/* ---- Sections ---- */
+.qadmin-section {
+    background-color: var(--color-gris);
+    border-radius: var(--border-radius);
+    padding: 24px;
+    border: 1px solid var(--color-gris-clair);
+}
+
+.qadmin-section__titre {
+    font-family: var(--font-titre);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-or);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--color-gris-clair);
+}
+
+/* ---- Grille ---- */
+.qadmin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.qadmin-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.qadmin-label {
+    font-family: var(--font-titre);
+    font-size: 0.75rem;
+    color: var(--color-texte);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.qadmin-value {
+    font-family: var(--font-corps);
+    font-size: 0.95rem;
+    color: var(--color-blanc);
+    text-transform: capitalize;
+}
+
+/* ---- Textes longs ---- */
+.qadmin-texte {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--color-gris-clair);
+}
+
+.qadmin-texte p {
+    font-family: var(--font-corps);
+    font-size: 0.9rem;
+    color: var(--color-texte);
+    line-height: 1.7;
+    margin-top: 4px;
+}
+
+/* ---- Date ---- */
+.qadmin-date {
+    font-family: var(--font-corps);
+    font-size: 0.8rem;
+    color: var(--color-texte);
+    text-align: right;
+    padding: 0 4px;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 600px) {
+    .qadmin-container { margin: 16px; }
+    .qadmin-grid { grid-template-columns: 1fr 1fr; }
+}

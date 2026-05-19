@@ -1,0 +1,113 @@
+
+/*  Section user  */
+
+.user-section {
+    padding: 60px 40px;
+    background-color: var(--color-noir);
+    min-height: calc(100vh - 90px);
+}
+
+/*  Conteneur  */
+
+.user-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/*  Header */
+
+.user-container .auth-header h1 { 
+    color: var(--color-or);
+    margin-bottom: 20px;
+    text-align: center; 
+}
+
+/*  Message vide  */
+
+.user-empty {
+    text-align: center;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+.user-empty p {
+    font-family: var(--font-corps);
+    font-size: 1rem;
+    color: var(--color-texte);
+}
+
+/*  Liste commandes  */
+
+.user-commandes {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/*  Card commande  */
+
+.commande-card {
+    background-color: var(--color-or);
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition);
+}
+.commande-card:hover { 
+    transform: translateY(-2px); 
+    box-shadow: var(--shadow-hover); }
+
+.commande-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid rgba(10,10,10,0.15);
+}
+.commande-card__titre {
+    font-family: var(--font-titre);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-noir);
+    letter-spacing: 0.03em;
+}
+
+.commande-card__footer {
+    border-top: 2px solid rgba(10,10,10,0.1);
+    padding-top: 16px;
+}
+.commande-card__info {
+    font-family: var(--font-corps);
+    font-size: 0.9rem;
+    color: var(--color-gris);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.6;
+}
+.commande-card__info i {
+    color: #25D366;
+    font-size: 1.1rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+/*  Responsive  */
+
+@media (max-width: 768px) {
+    .user-section { padding: 40px 20px; }
+
+    .commande-card__header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .user-section { padding: 24px 16px; }
+    .commande-card { padding: 20px 16px; }
+}

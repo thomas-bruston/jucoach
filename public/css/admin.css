@@ -1,0 +1,522 @@
+/* =============================================================
+   ADMIN.CSS — Espace administrateur complet
+============================================================= */
+
+/* ---- Layout admin ---- */
+body {
+    background-color: var(--color-noir);
+}
+
+/* ---- Header admin ---- */
+.admin-header {
+    background-color: var(--color-or);
+    padding: 30px 40px;
+    text-align: center;
+}
+.admin-header h1 {
+    font-family: var(--font-titre);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-noir);
+    letter-spacing: 0.08em;
+    margin: 0;
+}
+
+/* ---- Bouton retour accueil ---- */
+.btnContainer {
+    display: flex;
+    justify-content: center;
+    padding: 16px 40px;
+    background-color: var(--color-noir);
+}
+.header-btn {
+    font-family: var(--font-titre);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 10px 28px;
+    border-radius: var(--border-radius-btn);
+    background-color: var(--color-or);
+    color: var(--color-noir);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.header-btn:hover {
+    background-color: #e0b020;
+    transform: translateY(-2px);
+}
+
+/* ---- Dashboard ---- */
+.menuContainer {
+    padding: 60px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.menu-top {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+    max-width: 700px;
+}
+
+.menu-btn {
+    font-family: var(--font-titre);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 18px 28px;
+    border-radius: var(--border-radius-btn);
+    background-color: var(--color-or);
+    color: var(--color-noir);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    display: block;
+}
+.menu-btn:hover {
+    background-color: #e0b020;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+.menu-top .menu-btn {
+    min-width: 280px;
+    padding: 18px 48px;
+}
+
+/* ---- Conteneur général pages admin ---- */
+.btn-container {
+    padding: 24px 40px 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.main-btn {
+    font-family: var(--font-titre);
+    font-size: 1.4rem;
+    color: var(--color-or);
+    letter-spacing: 0.06em;
+}
+
+/* ---- Boutons action ---- */
+.btn-save {
+    font-family: var(--font-titre);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 10px 24px;
+    border-radius: var(--border-radius-btn);
+    background-color: var(--color-or);
+    color: var(--color-noir);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-block;
+    text-align: center;
+}
+.btn-save:hover {
+    background-color: #e0b020;
+    transform: translateY(-2px);
+}
+
+.btn-cancel {
+    font-family: var(--font-titre);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 10px 24px;
+    border-radius: var(--border-radius-btn);
+    background-color: transparent;
+    color: var(--color-or);
+    border: 2px solid var(--color-or);
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-block;
+    text-align: center;
+}
+.btn-cancel:hover {
+    background-color: var(--color-or);
+    color: var(--color-noir);
+}
+
+.btn-delete {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 6px;
+}
+.btn-delete:hover { color: #c0392b; transform: scale(1.1); }
+
+.btn-supprimer {
+    font-family: var(--font-titre);
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: var(--border-radius-btn);
+    background-color: #e74c3c;
+    color: var(--color-blanc);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.btn-supprimer:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+}
+
+/* ---- Tableaux ---- */
+.tableContainer {
+    padding: 24px 40px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--color-gris);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+caption,
+.caption,
+.table-caption {
+    font-family: var(--font-titre);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-or);
+    letter-spacing: 0.05em;
+    padding: 12px;
+    text-align: left;
+    caption-side: top;
+}
+
+thead tr {
+    background-color: var(--color-or);
+}
+thead th {
+    font-family: var(--font-titre);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-noir);
+    letter-spacing: 0.05em;
+    padding: 14px 16px;
+    text-align: left;
+}
+
+tbody tr {
+    border-bottom: 1px solid var(--color-gris-clair);
+    transition: var(--transition);
+}
+tbody tr:hover { background-color: var(--color-gris-clair); }
+tbody tr:last-child { border-bottom: none; }
+
+.tableContent th,
+.tableContent td,
+.tableContentItem {
+    font-family: var(--font-corps);
+    font-size: 1rem;
+    color: var(--color-blanc);
+    padding: 60px 20px !important;
+    vertical-align: middle;
+}
+
+tbody td, tbody th {
+    padding: 18px 16px;
+}
+
+.tableContent th { font-weight: 600;}
+
+.message--non-lu { background-color: rgba(244, 197, 44, 0.05); }
+.message--non-lu td,
+.message--non-lu th { color: var(--color-or); }
+
+.text-center { text-align: center; }
+.total { background-color: var(--color-gris-clair); }
+.total td, .total th { font-weight: 700; color: var(--color-or); }
+
+.nbCommande, .total { text-align: center; }
+
+/* ---- Formulaires admin ---- */
+.edit-form-content {
+    max-width: 700px;
+    margin: 24px 40px;
+    background-color: var(--color-gris);
+    border-radius: var(--border-radius);
+    padding: 36px;
+}
+.edit-form-content h2 {
+    font-family: var(--font-titre);
+    font-size: 1.4rem;
+    color: var(--color-or);
+    letter-spacing: 0.06em;
+    margin-bottom: 28px;
+}
+
+.edit-form-content label {
+    color: var(--color-or);
+}
+.edit-form-content input[type="text"],
+.edit-form-content input[type="number"],
+.edit-form-content input[type="url"],
+.edit-form-content input[type="date"],
+.edit-form-content textarea,
+.edit-form-content select {
+    background-color: var(--color-gris-clair);
+    border: 2px solid var(--color-gris-clair);
+    color: var(--color-blanc);
+}
+.edit-form-content input::placeholder,
+.edit-form-content textarea::placeholder {
+    color: rgba(255,255,255,0.3);
+}
+.edit-form-content input:focus,
+.edit-form-content textarea:focus,
+.edit-form-content select:focus {
+    border-color: var(--color-or);
+    box-shadow: 0 0 0 3px rgba(244, 197, 44, 0.15);
+}
+.edit-form-content select option {
+    background-color: var(--color-gris);
+}
+
+.form-buttons {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.footer-btn {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--color-gris-clair);
+}
+
+.error-message {
+    background-color: #3a1a1a;
+    color: #e74c3c;
+    border: 1px solid #e74c3c;
+    border-radius: var(--border-radius);
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    font-family: var(--font-corps);
+    font-size: 0.9rem;
+}
+
+/* ---- Alertes admin ---- */
+.alert-success {
+    background-color: #1a3a2a;
+    color: #2ecc71;
+    border: 1px solid #2ecc71;
+    border-radius: var(--border-radius);
+    padding: 12px 16px;
+    margin: 12px 40px;
+    font-family: var(--font-corps);
+    font-size: 0.9rem;
+}
+.alert-error {
+    background-color: #3a1a1a;
+    color: #e74c3c;
+    border: 1px solid #e74c3c;
+    border-radius: var(--border-radius);
+    padding: 12px 16px;
+    margin: 12px 40px;
+    font-family: var(--font-corps);
+    font-size: 0.9rem;
+}
+
+/* ---- Stats ---- */
+.stats-filtres {
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.stats-filtres label {
+    font-family: var(--font-titre);
+    font-size: 0.9rem;
+    color: var(--color-or);
+}
+.stats-filtres input[type="date"] {
+    background-color: var(--color-gris);
+    border: 2px solid var(--color-gris-clair);
+    color: var(--color-blanc);
+    padding: 8px 12px;
+    border-radius: var(--border-radius);
+    font-family: var(--font-corps);
+    width: auto;
+}
+.stats-filtres input[type="date"]:focus {
+    border-color: var(--color-or);
+    outline: none;
+}
+
+.container {
+    padding: 24px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.table-section,
+.chart-section { width: 100%; }
+
+.chart-title {
+    font-family: var(--font-titre);
+    font-size: 1rem;
+    color: var(--color-or);
+    letter-spacing: 0.05em;
+    margin-bottom: 16px;
+}
+
+/* ---- Galerie admin ---- */
+.admin-galerie-section {
+    padding: 24px 40px;
+}
+.admin-galerie-section h2 {
+    font-family: var(--font-titre);
+    font-size: 1.2rem;
+    color: var(--color-or);
+    margin-bottom: 20px;
+    letter-spacing: 0.05em;
+}
+.admin-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+}
+.admin-gallery-item {
+    background-color: var(--color-gris);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    padding-bottom: 12px;
+    text-align: center;
+}
+.admin-gallery-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 8px;
+}
+.admin-gallery-titre {
+    font-family: var(--font-corps);
+    font-size: 0.82rem;
+    color: var(--color-texte);
+    padding: 0 8px;
+    margin-bottom: 6px;
+}
+.admin-add-section { margin-top: 16px; }
+
+/* ---- Cards clients ---- */
+.client-card {
+    margin: 16px 40px;
+    background-color: var(--color-gris);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    border: 1px solid var(--color-gris-clair);
+}
+
+.client-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 24px;
+    background-color: var(--color-or);
+}
+.client-card__header h3 {
+    font-family: var(--font-titre);
+    font-size: 1.1rem;
+    color: var(--color-noir);
+    margin-bottom: 4px;
+}
+.client-card__header p {
+    font-family: var(--font-corps);
+    font-size: 0.9rem;
+    color: var(--color-gris);
+}
+.client-card__header a {
+    color: var(--color-noir);
+    text-decoration: underline;
+}
+.client-card__date {
+    font-size: 0.8rem !important;
+    color: var(--color-gris-clair) !important;
+    margin-top: 4px;
+}
+
+.client-card__section {
+    padding: 16px 24px;
+    border-top: 1px solid var(--color-gris-clair);
+}
+.client-card__section h4 {
+    font-family: var(--font-titre);
+    font-size: 0.9rem;
+    color: var(--color-or);
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+}
+.client-card__empty {
+    font-family: var(--font-corps);
+    font-size: 0.85rem;
+    color: var(--color-texte);
+}
+.client-card__list {
+    list-style: disc;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.client-card__list li {
+    font-family: var(--font-corps);
+    font-size: 0.9rem;
+    color: var(--color-blanc);
+}
+.client-card__meta {
+    color: var(--color-texte);
+    font-size: 0.85rem;
+}
+
+/* Stats */
+
+/* Graphique Chart.js  */
+.chart-section canvas {
+    max-height: 300px;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+    .container { grid-template-columns: 1fr; }
+    .menu-grid { grid-template-columns: 1fr; max-width: 400px; }
+}
+
+@media (max-width: 480px) {
+    .admin-header { padding: 20px; }
+    .admin-header h1 { font-size: 1.5rem; }
+    .btn-container, .tableContainer,
+    .edit-form-content, .admin-galerie-section,
+    .stats-filtres, .container { padding-left: 16px; padding-right: 16px; }
+    .edit-form-content { margin: 16px; }
+    .menuContainer { padding: 40px 20px; }
+}

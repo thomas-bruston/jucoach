@@ -1,0 +1,91 @@
+services:
+  # PHP 8.3 + extensions
+  app:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    container_name: jcs_app
+    restart: unless-stopped
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - mysql
+      - mongo
+    networks:
+      - jcs_network
+    environment:
+      - APP_ENV=development
+
+  # Nginx
+  nginx:
+    image: nginx:alpine
+    container_name: jcs_nginx
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    volumes:
+      - .:/var/www/html
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
+    networks:
+      - jcs_network
+
+  # MySQL 8
+  mysql:
+    image: mysql:8.0
+    container_name: jcs_mysql
+    restart: unless-stopped
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+      - jcs_mysql_data:/var/lib/mysql
+      - ./sql/create.sql:/docker-entrypoint-initdb.d/01_create.sql
+      - ./sql/seed.sql:/docker-entrypoint-initdb.d/02_seed.sql
+    networks:
+      - jcs_network
+
+  # MongoDB
+  mongo:
+    image: mongo:7.0
+    container_name: jcs_mongo
+    restart: unless-stopped
+    ports:
+      - "27018:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD}
+      MONGO_INITDB_DATABASE: ${MONGO_DATABASE}
+    volumes:
+      - jcs_mongo_data:/data/db
+    networks:
+      - jcs_network
+
+  # PhpMyAdmin (dev uniquement)
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: jcs_phpmyadmin
+    restart: unless-stopped
+    ports:
+      - "8084:80"
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    depends_on:
+      - mysql
+    networks:
+      - jcs_network
+
+volumes:
+  jcs_mysql_data:
+  jcs_mongo_data:
+
+networks:
+  jcs_network:
+    driver: bridge

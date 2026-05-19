@@ -1,0 +1,123 @@
+/* =============================================================
+   AUTH.CSS — Login, Register, Forgot, Reset
+============================================================= */
+
+/* ---- Section auth ---- */
+.auth-section {
+    min-height: calc(100vh - 90px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    background-color: var(--color-noir);
+}
+
+/* ---- Conteneur carte ---- */
+.auth-container {
+    background-color: var(--color-or);
+    border-radius: 20px;
+    padding: 50px 40px;
+    width: 100%;
+    max-width: 560px;
+    box-shadow: var(--shadow-card);
+}
+
+/* ---- Header de la carte ---- */
+.auth-header {
+    text-align: center;
+    margin-bottom: 36px;
+}
+.auth-header h1 {
+    font-family: var(--font-titre);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-noir);
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+}
+.auth-header p {
+    font-family: var(--font-corps);
+    font-size: 1rem;
+    color: var(--color-gris);
+}
+
+/* ---- Formulaire ---- */
+.auth-form { width: 100%; }
+
+/* Surcharge labels pour fond doré */
+.auth-form label {
+    color: var(--color-noir);
+    font-weight: 700;
+}
+
+/* Surcharge inputs pour fond doré */
+.auth-form input[type="text"],
+.auth-form input[type="email"],
+.auth-form input[type="password"],
+.auth-form input[type="tel"],
+.auth-form select,
+.auth-form textarea {
+    background-color: var(--color-blanc);
+    border: 2px solid transparent;
+    color: var(--color-noir);
+}
+.auth-form input::placeholder,
+.auth-form textarea::placeholder {
+    color: rgba(10, 10, 10, 0.4);
+}
+.auth-form input:focus,
+.auth-form textarea:focus,
+.auth-form select:focus {
+    border-color: var(--color-noir);
+    box-shadow: 0 0 0 3px rgba(10, 10, 10, 0.1);
+}
+
+/* Bouton submit */
+.auth-form .btn--primary {
+    background-color: var(--color-noir);
+    color: var(--color-or);
+    margin-top: 8px;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+}
+.auth-form .btn--primary:hover {
+    background-color: var(--color-gris);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Toggle password */
+.auth-form .toggle-password { color: var(--color-gris); }
+
+/* Liens du formulaire */
+.auth-form .form-links a { color: var(--color-noir); }
+.auth-form .form-footer a { color: var(--color-noir); }
+
+/* Password hint */
+.auth-form .password-hint { color: var(--color-gris); }
+
+/* Field error */
+.auth-form .field-error { color: #8b0000; }
+
+/* Alertes dans auth */
+.auth-container .alert--error {
+    background-color: #f8d7da;
+    color: #8b0000;
+    border-color: #f1aeb5;
+}
+.auth-container .alert--success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+.auth-container .alert p { margin: 0; }
+
+/* ---- Responsive ---- */
+
+@media (max-width: 768px) {
+    .auth-container {
+        padding: 36px 24px;
+        border-radius: 16px;
+    }
+    .auth-header h1 { font-size: 1.6rem; }
+}

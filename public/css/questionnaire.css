@@ -1,0 +1,129 @@
+/* =============================================================
+   QUESTIONNAIRE.CSS — Formulaire questionnaire sportif
+============================================================= */
+
+/* ---- Section questionnaire ---- */
+.questionnaire-section {
+    padding: 60px 40px;
+    background-color: var(--color-noir);
+    min-height: calc(100vh - 90px);
+}
+
+/* ---- Conteneur ---- */
+.questionnaire-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--color-or);
+    border-radius: 20px;
+    padding: 50px 40px;
+    box-shadow: var(--shadow-card);
+}
+
+/* ---- Header ---- */
+.questionnaire-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.questionnaire-header h1 {
+    font-family: var(--font-titre);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-noir);
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+}
+.questionnaire-header p {
+    font-family: var(--font-corps);
+    font-size: 0.95rem;
+    color: var(--color-gris);
+    line-height: 1.7;
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+/* ---- Fieldsets ---- */
+.questionnaire-fieldset {
+    border: 2px solid rgba(10, 10, 10, 0.15);
+    border-radius: var(--border-radius);
+    padding: 28px;
+    margin-bottom: 28px;
+}
+.questionnaire-fieldset legend {
+    font-family: var(--font-titre);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-noir);
+    letter-spacing: 0.05em;
+    padding: 0 12px;
+    text-transform: uppercase;
+}
+
+/* ---- Labels sur fond doré ---- */
+.questionnaire-form label {
+    color: var(--color-noir);
+    font-weight: 700;
+}
+
+/* ---- Inputs sur fond doré ---- */
+.questionnaire-form input[type="text"],
+.questionnaire-form input[type="number"],
+.questionnaire-form textarea,
+.questionnaire-form select {
+    background-color: var(--color-blanc);
+    border: 2px solid transparent;
+    color: var(--color-noir);
+}
+.questionnaire-form input:focus,
+.questionnaire-form textarea:focus,
+.questionnaire-form select:focus {
+    border-color: var(--color-noir);
+    box-shadow: 0 0 0 3px rgba(10, 10, 10, 0.1);
+}
+.questionnaire-form input::placeholder,
+.questionnaire-form textarea::placeholder {
+    color: rgba(10, 10, 10, 0.4);
+}
+
+/* Mention optionnel */
+.questionnaire-form .optional {
+    font-weight: 400;
+    font-size: 0.82rem;
+    color: var(--color-gris-clair);
+}
+
+/* ---- Bouton submit ---- */
+.questionnaire-form .btn--primary {
+    background-color: var(--color-noir);
+    color: var(--color-or);
+    margin-top: 12px;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+}
+.questionnaire-form .btn--primary:hover {
+    background-color: var(--color-gris);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ---- Alertes ---- */
+.questionnaire-container .alert--error {
+    background-color: #f8d7da;
+    color: #8b0000;
+    border-color: #f1aeb5;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+    .questionnaire-section { padding: 40px 20px; }
+    .questionnaire-container {
+        padding: 36px 24px;
+        border-radius: 16px;
+    }
+    .questionnaire-header h1 { font-size: 1.6rem; }
+    .questionnaire-fieldset { padding: 20px 16px; }
+}
+
+@media (max-width: 480px) {
+    .questionnaire-section { padding: 24px 16px; }
+    .questionnaire-container { padding: 28px 16px; }
+}

@@ -1,0 +1,58 @@
+/* =============================================================
+   CGV-MENTIONS.CSS — CGV et Mentions légales
+============================================================= */
+
+.cgv-container {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 40px;
+    color: var(--color-blanc);
+}
+
+.cgv-container h1 {
+    font-family: var(--font-titre);
+    font-size: 2rem;
+    color: var(--color-or);
+    letter-spacing: 0.08em;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.cgv-container h3 {
+    font-family: var(--font-titre);
+    font-size: 1.1rem;
+    color: var(--color-or);
+    letter-spacing: 0.05em;
+    margin: 32px 0 12px;
+}
+
+.cgv-container h4 {
+    font-family: var(--font-titre);
+    font-size: 1rem;
+    color: var(--color-texte);
+    margin: 20px 0 8px;
+}
+
+.cgv-container p {
+    font-family: var(--font-corps);
+    font-size: 0.95rem;
+    color: var(--color-texte);
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+.cgv-container a {
+    color: var(--color-or);
+    transition: var(--transition);
+}
+.cgv-container a:hover { opacity: 0.8; }
+
+/* ---- Responsive ---- */
+
+@media (max-width: 768px) {
+    .cgv-container {
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+    .cgv-container h1 { font-size: 1.6rem; }
+}

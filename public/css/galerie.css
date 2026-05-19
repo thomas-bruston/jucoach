@@ -1,0 +1,172 @@
+/* =============================================================
+   GALERIE.CSS — Galerie photos et vidéos
+============================================================= */
+
+/* ---- Section galerie ---- */
+.galerie-section {
+    padding: 60px 40px;
+    background-color: var(--color-noir);
+    min-height: calc(100vh - 90px);
+}
+
+/* ---- Header ---- */
+.galerie-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+.galerie-header h1 {
+    font-family: var(--font-titre);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-or);
+    letter-spacing: 0.08em;
+}
+
+/* ---- Grille photos ---- */
+.galerie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto 60px;
+}
+
+.galerie-item {
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    background-color: var(--color-gris);
+    transition: var(--transition);
+    cursor: pointer;
+}
+.galerie-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+
+.galerie-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: var(--transition);
+}
+.galerie-item:hover img { transform: scale(1.05); }
+
+.galerie-legende {
+    padding: 12px 16px;
+    font-family: var(--font-corps);
+    font-size: 0.9rem;
+    color: var(--color-texte);
+    text-align: center;
+}
+
+/* ---- Message vide ---- */
+.galerie-empty {
+    text-align: center;
+    color: var(--color-texte);
+    font-family: var(--font-corps);
+    font-size: 1rem;
+    padding: 40px;
+}
+
+/* ---- Section vidéos ---- */
+.galerie-videos {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 40px;
+    border-top: 2px solid var(--color-gris-clair);
+}
+.galerie-videos h2 {
+    font-family: var(--font-titre);
+    font-size: 1.8rem;
+    color: var(--color-or);
+    letter-spacing: 0.06em;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.galerie-videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 28px;
+}
+
+.galerie-video-item {
+    background-color: var(--color-gris);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: var(--transition);
+}
+.galerie-video-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.galerie-video-item iframe {
+    width: 100%;
+    height: 220px;
+    display: block;
+    border: none;
+}
+
+.galerie-video-item figcaption {
+    padding: 12px 16px;
+    font-family: var(--font-corps);
+    font-size: 0.9rem;
+    color: var(--color-texte);
+    text-align: center;
+}
+
+/* ---- Admin galerie ---- */
+.admin-galerie-section {
+    margin-bottom: 48px;
+    padding: 0 20px;
+}
+.admin-galerie-section h2 {
+    font-family: var(--font-titre);
+    font-size: 1.4rem;
+    color: var(--color-or);
+    margin-bottom: 24px;
+    letter-spacing: 0.05em;
+}
+
+.admin-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.admin-gallery-item {
+    background-color: var(--color-gris);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    padding-bottom: 12px;
+    text-align: center;
+}
+.admin-gallery-item img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 10px;
+}
+.admin-gallery-titre {
+    font-family: var(--font-corps);
+    font-size: 0.85rem;
+    color: var(--color-texte);
+    padding: 0 10px;
+    margin-bottom: 8px;
+}
+
+.admin-add-section { margin-top: 16px; }
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+    .galerie-section { padding: 40px 20px; }
+    .galerie-header h1 { font-size: 2rem; }
+    .galerie-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+    .galerie-videos-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+    .galerie-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .galerie-item img { height: 160px; }
+}
