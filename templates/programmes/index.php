@@ -34,7 +34,7 @@ ob_start();
 
                 <!-- Image gauche -->
                 <div class="programme-card__img-left">
-                    <img src="/images/left-card.png"
+                    <img src="/images/leftcard.webp"
                          alt=""
                          aria-hidden="true"
                          loading="lazy">
@@ -85,7 +85,7 @@ ob_start();
 
                 <!-- Image droite -->
                 <div class="programme-card__img-right">
-                    <img src="/images/right-card.png"
+                    <img src="/images/rightcard.webp"
                          alt=""
                          aria-hidden="true"
                          loading="lazy">

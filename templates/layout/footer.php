@@ -28,7 +28,7 @@
                aria-label="Suivre Ju Coach Sportif sur Instagram (nouvel onglet)">
                 <i class="fa-brands fa-instagram" aria-hidden="true"></i>
             </a>
-            <a href="https://www.facebook.com/jucoachsportif"
+            <a href="https://www.facebook.com/jucoachsportifnosybe"
                class="footer-social-link footer-social-link--facebook"
                target="_blank"
                rel="noopener noreferrer"

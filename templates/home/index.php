@@ -9,7 +9,7 @@ ob_start();
 
 <!-- HERO -->
 <section class="hero" aria-label="Présentation">
-    <img src="/images/salle.png"
+    <img src="/images/banner.png"
          alt="Salle de sport avec coach sportif"
          class="hero__image">
 </section>
@@ -19,7 +19,7 @@ ob_start();
     <div class="coach-container">
 
         <div class="coach-card">
-            <img src="/images/portrait.png"
+            <img src="/images/portrait.webp"
                  alt="Portrait de Ju, coach sportif"
                  class="coach-card__portrait">
             <div class="coach-card__texte">
@@ -27,7 +27,7 @@ ob_start();
             </div>
         </div>
 
-        <img src="/images/accueil.png"
+        <img src="/images/accueil.webp"
              alt="Séance de coaching"
              class="coach-section__side-img">
 
@@ -69,15 +69,10 @@ ob_start();
              aria-label="Programme <?= htmlspecialchars($programme->getTitre()) ?>">
 
         <div class="programme-card__images">
-            <img src="/images/left-card.png"
+            <img src="/images/programmehome.webp"
                  alt=""
                  aria-hidden="true"
-                 class="programme-card__img programme-card__img--left"
-                 loading="lazy">
-            <img src="/images/right-card.png"
-                 alt=""
-                 aria-hidden="true"
-                 class="programme-card__img programme-card__img--right"
+                 class="programme-card__img"
                  loading="lazy">
         </div>
 

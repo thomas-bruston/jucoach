@@ -53,14 +53,6 @@ class Router
         $this->add('GET',  '/questionnaire',            'QuestionnaireController',     'show',               'utilisateur');
         $this->add('POST', '/questionnaire',            'QuestionnaireController',     'store',              'utilisateur');
 
-        // Paiement Stripe
-
-        $this->add('GET',  '/paiement',                 'PaiementController',          'showCheckout',       'utilisateur');
-        $this->add('POST', '/paiement/initier',         'PaiementController',          'initier',            'utilisateur');
-        $this->add('GET',  '/paiement/succes',          'PaiementController',          'succes',             'utilisateur');
-        $this->add('GET',  '/paiement/annule',          'PaiementController',          'annule',             'utilisateur');
-        $this->add('POST', '/webhook/stripe',           'PaiementController',          'webhook',            null); // Stripe webhook (pas d'auth session)
-
         // Admin
 
         $this->add('GET',  '/admin',                            'AdminController',     'dashboard',          'administrateur');
@@ -78,12 +70,6 @@ class Router
         $this->add('POST', '/admin/galerie/photo/supprimer',    'GalerieController',   'deletePhoto',        'administrateur');
         $this->add('POST', '/admin/galerie/video/ajouter',      'GalerieController',   'addVideo',           'administrateur');
         $this->add('POST', '/admin/galerie/video/supprimer',    'GalerieController',   'deleteVideo',        'administrateur');
-        $this->add('GET',  '/admin/plans-nutritionnels',        'PlanNutritionnelController', 'adminIndex',  'administrateur');
-        $this->add('GET',  '/admin/plan/nouveau',               'PlanNutritionnelController', 'showCreate',  'administrateur');
-        $this->add('POST', '/admin/plan/nouveau',               'PlanNutritionnelController', 'create',      'administrateur');
-        $this->add('POST', '/admin/plan/assigner',              'PlanNutritionnelController', 'assigner',    'administrateur');
-        $this->add('POST', '/admin/plan/marquer-envoye',        'PlanNutritionnelController', 'marquerEnvoye','administrateur');
-        $this->add('POST', '/admin/plan/supprimer',             'PlanNutritionnelController', 'delete',      'administrateur');
         $this->add('GET',  '/admin/messages',                   'ContactController',   'adminIndex',         'administrateur');
 
         $this->add('POST', '/admin/message/supprimer',          'ContactController',   'delete',             'administrateur');

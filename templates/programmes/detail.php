@@ -14,9 +14,9 @@ ob_start();
         <?php endif; ?>
 
         <div class="programme-detail__images">
-            <img src="/images/left-card.png" alt="" aria-hidden="true"
+            <img src="/images/leftcard.webp" alt="" aria-hidden="true"
                  class="programme-detail__img" loading="lazy">
-            <img src="/images/right-card.png" alt="" aria-hidden="true"
+            <img src="/images/rightcard.webp" alt="" aria-hidden="true"
                  class="programme-detail__img" loading="lazy">
         </div>
 
