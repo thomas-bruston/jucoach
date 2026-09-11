@@ -62,8 +62,6 @@ class ProgrammeController extends Controller
 
         $this->render('admin/programmes/index', [
             'programmes' => $programmes,
-            'success'    => Session::getFlash('success'),
-            'error'      => Session::getFlash('error'),
         ]);
     }
 

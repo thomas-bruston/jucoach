@@ -29,10 +29,7 @@ class AdminController extends Controller
 
     public function dashboard(): void
     {
-        $this->render('admin/dashboard', [
-            'success' => Session::getFlash('success'),
-            'error'   => Session::getFlash('error'),
-        ]);
+        $this->render('admin/dashboard');
     }
 
     /* Liste des clients */
