@@ -15,10 +15,11 @@ ob_start();
     et comment vous pouvez exercer vos droits.</p>
 
     <h3>1. Responsable du traitement</h3>
-    <p>Le responsable du traitement des données collectées sur ce site est Ju Coach Sportif (Julien),
-    basé à Nosy Be, Madagascar. Pour toute question relative à vos données personnelles, vous pouvez
-    contacter <a href="mailto:ju@jucoachsportif.com">ju@jucoachsportif.com</a> ou utiliser le
-    <a href="/contact">formulaire de contact</a>.</p>
+    <p>Le responsable du traitement des données collectées sur ce site est <strong>Ju Coach Sportif</strong>
+    (SARLU), dont le siège social est à Nosy Be, Madagascar, représenté par Julien Fachan. Pour toute
+    question relative à vos données personnelles, vous pouvez contacter
+    <a href="mailto:jucoaching@outlook.com">jucoaching@outlook.com</a> ou utiliser le
+    <a href="/contact">formulaire de contact</a>. Voir aussi les <a href="/mentions-legales">mentions légales</a>.</p>
 
     <h3>2. Données collectées</h3>
 
@@ -56,14 +57,16 @@ ob_start();
     <h3>4. Destinataires des données</h3>
     <p>Vos données ne sont ni vendues, ni louées, ni partagées avec des tiers à des fins commerciales.
     Elles sont accessibles uniquement par Julien (administrateur du site) et, dans la stricte mesure du
-    nécessaire au fonctionnement technique du site, par l'hébergeur et le service d'envoi d'e-mails
-    utilisé pour les notifications (confirmation de compte, réinitialisation de mot de passe,
+    nécessaire au fonctionnement technique du site, par l'hébergeur (Hostinger) et le service d'envoi
+    d'e-mails utilisé pour les notifications (confirmation de compte, réinitialisation de mot de passe,
     confirmation de commande).</p>
 
     <h3>5. Durée de conservation</h3>
-    <p>Vos données sont conservées tant que votre compte est actif. Vous pouvez à tout moment demander
-    leur suppression (voir « Vos droits » ci-dessous). Les liens de réinitialisation de mot de passe
-    expirent automatiquement après 1 heure et ne sont utilisables qu'une seule fois.</p>
+    <p>Les données liées à votre compte (identité, questionnaire, commandes) sont conservées tant que
+    votre compte est actif. Les données issues d'une simple prise de contact (formulaire de contact, sans
+    création de compte) sont conservées 3 ans après le dernier échange. Vous pouvez à tout moment demander
+    la suppression de vos données (voir « Vos droits » ci-dessous). Les liens de réinitialisation de mot
+    de passe expirent automatiquement après 1 heure et ne sont utilisables qu'une seule fois.</p>
 
     <h3>6. Cookies</h3>
     <p>Ce site utilise uniquement un cookie de session, strictement nécessaire à votre connexion
@@ -83,7 +86,7 @@ ob_start();
         <li><strong>Droit d'opposition et de retrait du consentement</strong> : vous pouvez à tout moment vous opposer au traitement de vos données ou retirer votre consentement, notamment concernant les données de santé du questionnaire.</li>
         <li><strong>Droit à la portabilité</strong> : vous pouvez demander une copie de vos données dans un format structuré.</li>
     </ul>
-    <p>Pour exercer ces droits, contactez <a href="mailto:ju@jucoachsportif.com">ju@jucoachsportif.com</a>.
+    <p>Pour exercer ces droits, contactez <a href="mailto:jucoaching@outlook.com">jucoaching@outlook.com</a>.
     Une réponse vous sera apportée dans un délai raisonnable, et au plus tard un mois après réception de
     votre demande. Si vous estimez que vos droits ne sont pas respectés, vous pouvez introduire une
     réclamation auprès de l'autorité de protection des données compétente (en France, la CNIL —

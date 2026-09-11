@@ -28,7 +28,7 @@ class MailService
         $this->from       = Env::get('MAIL_FROM',      'contact@jucoachsportif.com');
         $this->fromName   = Env::get('MAIL_FROM_NAME', 'Ju Coach Sportif');
         $this->encryption = Env::get('MAIL_ENCRYPTION', 'tls');
-        $this->adminEmail = Env::get('MAIL_ADMIN',     'ju@jucoachsportif.com');
+        $this->adminEmail = Env::get('MAIL_ADMIN',     'jucoaching@outlook.com');
     }
 
     /* Envoi mail */
