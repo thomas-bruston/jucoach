@@ -47,6 +47,19 @@
 }
 .cgv-container a:hover { opacity: 0.8; }
 
+.cgv-container ul {
+    margin: 0 0 12px;
+    padding-left: 20px;
+}
+.cgv-container li {
+    font-family: var(--font-corps);
+    font-size: 0.95rem;
+    color: var(--color-texte);
+    line-height: 1.8;
+    margin-bottom: 6px;
+}
+.cgv-container strong { color: var(--color-or); }
+
 /* ---- Responsive ---- */
 
 @media (max-width: 768px) {

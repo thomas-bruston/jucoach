@@ -77,9 +77,14 @@ class AuthService
         $confirm   = $data['password_confirm'] ?? '';
         $telephone = trim($data['telephone']   ?? '') ?: null;
         $adresse   = trim($data['adresse']     ?? '') ?: null;
+        $consent   = $data['consent_donnees']  ?? null;
 
         if (empty($nom) || empty($prenom)) {
             throw new \InvalidArgumentException('Nom et prénom sont obligatoires.');
+        }
+
+        if ($consent === null) {
+            throw new \InvalidArgumentException('Vous devez accepter la politique de confidentialité pour créer un compte.');
         }
 
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {

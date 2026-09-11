@@ -33,6 +33,10 @@ class QuestionnaireService
             throw new \RuntimeException('Vous avez déjà rempli votre questionnaire.');
         }
 
+        if (($data['consent_sante'] ?? null) === null) {
+            throw new \InvalidArgumentException('Vous devez autoriser le traitement de ces informations pour valider le questionnaire.');
+        }
+
         $objectifPrincipal = trim($data['objectif_principal'] ?? '');
         if (empty($objectifPrincipal)) {
             throw new \InvalidArgumentException('L\'objectif principal est obligatoire.');

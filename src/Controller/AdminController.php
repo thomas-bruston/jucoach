@@ -89,9 +89,15 @@ class AdminController extends Controller
         $this->verifyCsrf();
 
         $userId = (int) $this->post('user_id');
-        $this->userRepository->delete($userId);
 
-        Session::setFlash('success', 'Client supprimé.');
+        try {
+            $this->userRepository->delete($userId);
+            Session::setFlash('success', 'Client supprimé.');
+        } catch (\RuntimeException $e) {
+            error_log('[AdminController::supprimerClient] ' . $e->getMessage());
+            Session::setFlash('error', 'Une erreur est survenue lors de la suppression du client.');
+        }
+
         $this->redirect('/admin/clients');
     }
 }

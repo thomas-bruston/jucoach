@@ -118,6 +118,16 @@ ob_start();
                 <?php endif; ?>
             </div>
 
+            <div class="form-group form-group--checkbox">
+                <input type="checkbox" id="consent_donnees" name="consent_donnees" value="1"
+                       required aria-required="true"
+                       <?= !empty($old['consent_donnees']) ? 'checked' : '' ?>>
+                <label for="consent_donnees">
+                    J'accepte que mes données personnelles soient utilisées conformément à la
+                    <a href="/politique-confidentialite" target="_blank" rel="noopener noreferrer">politique de confidentialité</a>. <span aria-hidden="true">*</span>
+                </label>
+            </div>
+
             <button type="submit" id="submit-btn" class="btn btn--primary btn--full">S'INSCRIRE</button>
 
             <div class="form-footer">

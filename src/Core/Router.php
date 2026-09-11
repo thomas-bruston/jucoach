@@ -28,6 +28,7 @@ class Router
         $this->add('POST', '/contact',                  'ContactController',           'store',              null);
         $this->add('GET',  '/cgv',                      'PageController',              'cgv',                null);
         $this->add('GET',  '/mentions-legales',         'PageController',              'mentions',           null);
+        $this->add('GET',  '/politique-confidentialite','PageController',              'confidentialite',    null);
         $this->add('GET',  '/partenaire',               'PageController',              'partenaire',         null);
 
         // Auth
@@ -50,6 +51,7 @@ class Router
         $this->add('GET',  '/mon-plan-nutritionnel',    'ProfilController',            'monPlanNutritionnel','utilisateur');
         $this->add('GET',  '/mon-profil',               'ProfilController',            'showProfil',         'utilisateur');
         $this->add('POST', '/mon-profil',               'ProfilController',            'updateProfil',       'utilisateur');
+        $this->add('POST', '/mon-profil/supprimer',     'ProfilController',            'deleteAccount',      'utilisateur');
         $this->add('GET',  '/questionnaire',            'QuestionnaireController',     'show',               'utilisateur');
         $this->add('POST', '/questionnaire',            'QuestionnaireController',     'store',              'utilisateur');
 

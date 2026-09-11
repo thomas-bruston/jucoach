@@ -118,16 +118,30 @@ class UserRepository extends AbstractRepository
         }
     }
 
+    /* Supprime un utilisateur et ses données associées (droit à l'effacement RGPD) */
+
     public function delete(int $userId): bool
     {
         try {
+            $this->pdo->beginTransaction();
+
+            // password_reset, questionnaire et utilisateur_plan sont en ON DELETE CASCADE.
+            // commande est en ON DELETE RESTRICT : suppression explicite requise.
+            $stmt = $this->pdo->prepare(
+                'DELETE FROM commande WHERE utilisateur_id = :id'
+            );
+            $stmt->execute([':id' => $userId]);
+
             $stmt = $this->pdo->prepare(
                 'DELETE FROM utilisateur WHERE id = :id'
             );
+            $stmt->execute([':id' => $userId]);
 
-            return $stmt->execute([':id' => $userId]);
+            $this->pdo->commit();
+            return true;
 
         } catch (\PDOException $e) {
+            $this->pdo->rollBack();
             throw new \RuntimeException('Erreur lors de la suppression de l\'utilisateur : ' . $e->getMessage());
         }
     }

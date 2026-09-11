@@ -78,6 +78,28 @@ ob_start();
             <button type="submit" class="btn btn--primary btn--full">ENREGISTRER</button>
 
         </form>
+
+        <div class="auth-danger-zone">
+            <h2>Supprimer mon compte</h2>
+            <p>Cette action est définitive : vos informations personnelles, votre questionnaire et l'historique de vos programmes choisis seront supprimés. Elle ne peut pas être annulée.</p>
+
+            <form class="auth-form" method="POST" action="/mon-profil/supprimer"
+                  onsubmit="return confirm('Confirmez-vous la suppression définitive de votre compte ?');">
+
+                <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrf_token ?? '') ?>">
+
+                <div class="form-group">
+                    <label for="password_confirm_delete">Mot de passe <span aria-hidden="true">*</span></label>
+                    <input type="password" id="password_confirm_delete" name="password_confirm_delete"
+                           placeholder="Confirmez avec votre mot de passe"
+                           required autocomplete="current-password"
+                           aria-required="true">
+                </div>
+
+                <button type="submit" class="btn btn--danger btn--full">SUPPRIMER MON COMPTE</button>
+
+            </form>
+        </div>
     </div>
 </section>
 

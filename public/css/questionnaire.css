@@ -91,6 +91,31 @@
     color: var(--color-gris-clair);
 }
 
+/* ---- Case à cocher (consentement) ---- */
+.form-group--checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.form-group--checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-top: 3px;
+    accent-color: var(--color-noir);
+    cursor: pointer;
+}
+.form-group--checkbox label {
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+.form-group--checkbox label a {
+    color: var(--color-noir);
+    text-decoration: underline;
+}
+
 /* ---- Bouton submit ---- */
 .questionnaire-form .btn--primary {
     background-color: var(--color-noir);

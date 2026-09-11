@@ -88,6 +88,17 @@ p { line-height: 1.7; }
     box-shadow: var(--shadow-hover);
 }
 
+.btn--danger {
+    background-color: transparent;
+    color: #c0392b;
+    border: 2px solid #c0392b;
+}
+.btn--danger:hover {
+    background-color: #c0392b;
+    color: var(--color-blanc);
+    transform: translateY(-2px);
+}
+
 .btn--outline {
     background-color:var(--color-or);
     color: var(--color-or);

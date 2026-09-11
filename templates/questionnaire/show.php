@@ -409,6 +409,16 @@ ob_start();
                 </div>
             </fieldset>
 
+            <div class="form-group form-group--checkbox">
+                <input type="checkbox" id="consent_sante" name="consent_sante" value="1"
+                       required aria-required="true">
+                <label for="consent_sante">
+                    J'autorise Ju Coach Sportif à traiter ces informations, y compris relatives à ma santé,
+                    dans le cadre exclusif de l'élaboration de mon programme personnalisé, conformément à la
+                    <a href="/politique-confidentialite" target="_blank" rel="noopener noreferrer">politique de confidentialité</a>. <span aria-hidden="true">*</span>
+                </label>
+            </div>
+
             <button type="submit" class="btn btn--primary btn--full">ENVOYER</button>
 
         </form>

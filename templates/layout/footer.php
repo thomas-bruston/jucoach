@@ -5,6 +5,7 @@
         <nav class="footer-legal" aria-label="Liens légaux">
             <a href="/cgv" class="footer-link">CGV</a>
             <a href="/mentions-legales" class="footer-link">MENTIONS LÉGALES</a>
+            <a href="/politique-confidentialite" class="footer-link">CONFIDENTIALITÉ</a>
         </nav>
 
         <!-- Réseaux sociaux et contact -->

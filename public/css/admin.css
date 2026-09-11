@@ -96,6 +96,12 @@ body {
     min-width: 280px;
     padding: 18px 48px;
 }
+.menu-grid a:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 100%;
+    max-width: 340px;
+}
 
 /* ---- Conteneur général pages admin ---- */
 .btn-container {

@@ -20,6 +20,11 @@ class PageController extends Controller
         $this->render('pages/mentions');
     }
 
+    public function confidentialite(): void
+    {
+        $this->render('pages/confidentialite');
+    }
+
     public function partenaire(): void
     {
     $this->render('pages/partenaire');

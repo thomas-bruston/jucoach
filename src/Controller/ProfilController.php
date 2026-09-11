@@ -71,6 +71,38 @@ class ProfilController extends Controller
         }
     }
 
+    /* Supprime définitivement le compte du client connecté (droit à l'effacement RGPD) */
+
+    public function deleteAccount(): void
+    {
+        $this->verifyCsrf();
+
+        $user     = $this->userRepository->findById(Session::getUserId());
+        $password = $this->post('password_confirm_delete');
+
+        if ($user === null || !password_verify($password, $user->getPassword())) {
+            Session::setFlash('errors', ['Mot de passe incorrect. Le compte n\'a pas été supprimé.']);
+            $this->redirect('/mon-profil');
+        }
+
+        try {
+            $this->userRepository->delete($user->getId());
+        } catch (\RuntimeException $e) {
+            error_log('[ProfilController::deleteAccount] ' . $e->getMessage());
+            Session::setFlash('errors', ['Une erreur est survenue. Veuillez réessayer.']);
+            $this->redirect('/mon-profil');
+        }
+
+        // Déconnexion sans détruire immédiatement la session (pour afficher le message)
+        Session::remove('user_id');
+        Session::remove('user_role');
+        Session::remove('user');
+        Session::regenerate();
+
+        Session::setFlash('success', 'Votre compte et vos données ont été supprimés.');
+        $this->redirect('/connexion');
+    }
+
     /* Affiche les programmes achetés */
 
     public function monProgramme(): void
