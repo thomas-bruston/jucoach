@@ -86,7 +86,7 @@
                 </div>
                 <div class="review-card__meta">
                     <p class="review-card__name">${review.name}</p>
-                    <div class="review-card__stars" aria-label="Note : ${review.rating} sur 5">
+                    <div class="review-card__stars" role="img" aria-label="Note : ${review.rating} sur 5">
                         ${buildStars(review.rating)}
                     </div>
                 </div>

@@ -4,6 +4,8 @@ services:
     build:
       context: .
       dockerfile: docker/php/Dockerfile
+      args:
+        APP_ENV: production
     container_name: jcs_app
     restart: always
     volumes:
@@ -27,6 +29,9 @@ services:
       - "443:443"
     volumes:
       - .:/var/www/html
+      # Au premier déploiement (pas encore de certificat) : default.conf (HTTP seul).
+      # Une fois le certificat obtenu (voir docker/nginx/default.prod.conf), remplacer
+      # par ./docker/nginx/default.prod.conf:/etc/nginx/conf.d/default.conf et redémarrer.
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
       - ./docker/nginx/ssl:/etc/nginx/ssl
     depends_on:
@@ -46,7 +51,7 @@ services:
     volumes:
       - jcs_mysql_data:/var/lib/mysql
       - ./sql/create.sql:/docker-entrypoint-initdb.d/01_create.sql
-      - ./sql/seed.sql:/docker-entrypoint-initdb.d/02_seed.sql
+      - ./sql/seed.prod.sql:/docker-entrypoint-initdb.d/02_seed.sql
     networks:
       - jcs_network
     # Pas de port exposé en prod

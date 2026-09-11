@@ -6,18 +6,26 @@ namespace Service;
 
 use Core\Session;
 use Entity\User;
+use Repository\LoginAttemptRepository;
 use Repository\UserRepository;
 
 /* Authentification */
 
 class AuthService
 {
-    private UserRepository $userRepository;
+    private const MAX_LOGIN_ATTEMPTS  = 5;
+    private const LOCKOUT_WINDOW_MINS = 15;
 
-    public function __construct(?UserRepository $userRepository = null)
-{
-    $this->userRepository = $userRepository ?? new UserRepository();
-}
+    private UserRepository         $userRepository;
+    private LoginAttemptRepository $loginAttemptRepository;
+
+    public function __construct(
+        ?UserRepository         $userRepository = null,
+        ?LoginAttemptRepository $loginAttemptRepository = null
+    ) {
+        $this->userRepository         = $userRepository ?? new UserRepository();
+        $this->loginAttemptRepository = $loginAttemptRepository ?? new LoginAttemptRepository();
+    }
 
     // Connexion
 
@@ -27,20 +35,18 @@ class AuthService
             return null;
         }
 
+        if ($this->loginAttemptRepository->countRecent($email, self::LOCKOUT_WINDOW_MINS) >= self::MAX_LOGIN_ATTEMPTS) {
+            throw new \RuntimeException('Trop de tentatives de connexion. Réessayez dans quelques minutes.');
+        }
+
         $user = $this->userRepository->findByEmail($email);
 
-        if ($user === null) {
+        if ($user === null || !$user->isActif() || !password_verify($password, $user->getPassword())) {
+            $this->loginAttemptRepository->record($email);
             return null;
         }
 
-        if (!$user->isActif()) {
-            return null;
-        }
-
-        if (!password_verify($password, $user->getPassword())) {
-            return null;
-        }
-
+        $this->loginAttemptRepository->clear($email);
         $this->storeInSession($user);
         return $user;
     }

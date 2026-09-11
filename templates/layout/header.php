@@ -3,7 +3,7 @@
 
         <!-- Logo -->
         <a href="/" class="header-logo" aria-label="Ju Coach Sportif — Accueil">
-            <img src="/images/logo.png" alt="Ju Coach Sportif" width="80" height="80">
+            <img src="/images/ju2.webp" alt="Ju Coach Sportif" width="64" height="64">
         </a>
 
         <!-- Navigation centrale (desktop) -->
@@ -55,7 +55,8 @@
             <ul id="userMenu"
                 class="user-menu"
                 role="menu"
-                aria-hidden="true">
+                aria-hidden="true"
+                inert>
                 <?php if (\Core\Session::isLoggedIn()): ?>
                     <li role="none"><a href="/mon-programme"         role="menuitem">Mon programme</a></li>
                     <li role="none"><a href="/mon-profil"            role="menuitem">Mon profil</a></li>
@@ -88,7 +89,8 @@
 <nav id="sideMenu"
      class="side-menu"
      aria-label="Menu mobile"
-     aria-hidden="true">
+     aria-hidden="true"
+     inert>
     <ul role="list">
         <li><a href="/programmes">PROGRAMMES <i class="fa-solid fa-dumbbell" aria-hidden="true"></i></a></li>
         <li><a href="/galerie">GALERIE <i class="fa-solid fa-image" aria-hidden="true"></i></a></li>

@@ -1,9 +1,12 @@
 FROM php:8.3-fpm
 
+ARG APP_ENV=development
+
 # Dépendances système
 RUN apt-get update && apt-get install -y \
     git \
     curl \
+    unzip \
     libpng-dev \
     libjpeg-dev \
     libfreetype6-dev \
@@ -11,8 +14,6 @@ RUN apt-get update && apt-get install -y \
     pkg-config \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install pdo pdo_mysql gd \
-    && pecl install mongodb \
-    && docker-php-ext-enable mongodb \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Composer
@@ -21,7 +22,11 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 WORKDIR /var/www/html
 
 COPY composer.json composer.lock* ./
-RUN composer install --no-scripts --no-autoloader
+RUN if [ "$APP_ENV" = "production" ]; then \
+        composer install --no-scripts --no-autoloader --no-dev; \
+    else \
+        composer install --no-scripts --no-autoloader; \
+    fi
 
 COPY . .
 RUN composer dump-autoload --optimize

@@ -9,9 +9,12 @@ ob_start();
 
 <!-- HERO -->
 <section class="hero" aria-label="Présentation">
-    <img src="/images/banner.png"
+    <img src="/images/banner.webp"
          alt="Salle de sport avec coach sportif"
-         class="hero__image">
+         class="hero__image"
+         width="1268"
+         height="1240"
+         fetchpriority="high">
 </section>
 
 <!-- PRÉSENTATION DU COACH -->
@@ -19,7 +22,7 @@ ob_start();
     <div class="coach-container">
 
         <div class="coach-card">
-            <img src="/images/portrait.webp"
+            <img src="/images/juportrait.webp"
                  alt="Portrait de Ju, coach sportif"
                  class="coach-card__portrait">
             <div class="coach-card__texte">
@@ -27,7 +30,7 @@ ob_start();
             </div>
         </div>
 
-        <img src="/images/accueil.webp"
+        <img src="/images/accueil3.webp"
              alt="Séance de coaching"
              class="coach-section__side-img">
 
@@ -46,7 +49,7 @@ ob_start();
         </div>
 
         <div class="type-item">
-            <img src="/images/icon-nutri.webp"
+            <img src="/images/iconnutri.webp"
                  alt="Programme nutrition"
                  class="type-item__icon">
             <p class="type-item__label">Nutrition</p>
@@ -129,7 +132,7 @@ ob_start();
     </div>
     <div class="reviews-wrapper">
         <button class="reviews-prev" aria-label="Avis précédents">&#8592;</button>
-        <div class="reviews-track" role="list"></div>
+        <div class="reviews-track"></div>
         <button class="reviews-next" aria-label="Avis suivants">&#8594;</button>
     </div>
 </section>

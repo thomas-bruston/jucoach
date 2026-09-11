@@ -145,18 +145,21 @@ class Router
             exit;
         }
 
-        $userRole = Session::getUserRole();
+        if (!self::hasSufficientRole(Session::getUserRole(), $requiredRole)) {
+            $this->abort(403);
+        }
+    }
 
-        // Hiérarchie
+    /* Compare le rôle de l'utilisateur au rôle requis selon la hiérarchie */
 
+    public static function hasSufficientRole(?string $userRole, string $requiredRole): bool
+    {
         $hierarchy = ['utilisateur' => 1, 'administrateur' => 2];
 
         $userLevel     = $hierarchy[$userRole]     ?? 0;
         $requiredLevel = $hierarchy[$requiredRole] ?? 0;
 
-        if ($userLevel < $requiredLevel) {
-            $this->abort(403);
-        }
+        return $userLevel >= $requiredLevel;
     }
 
     /* Gestion erreurs */

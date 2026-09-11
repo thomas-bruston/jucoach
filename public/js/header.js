@@ -15,6 +15,7 @@
             overlay.classList.toggle('visible', isOpen);
             burgerBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
             sideMenu.setAttribute('aria-hidden',    isOpen ? 'false' : 'true');
+            sideMenu.inert = !isOpen;
         });
     }
 
@@ -26,6 +27,7 @@
             overlay.classList.toggle('visible', isOpen);
             userBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
             userMenu.setAttribute('aria-hidden',  isOpen ? 'false' : 'true');
+            userMenu.inert = !isOpen;
         });
     }
 
@@ -36,10 +38,12 @@
             if (sideMenu) {
                 sideMenu.classList.remove('open');
                 sideMenu.setAttribute('aria-hidden', 'true');
+                sideMenu.inert = true;
             }
             if (userMenu) {
                 userMenu.classList.remove('open');
                 userMenu.setAttribute('aria-hidden', 'true');
+                userMenu.inert = true;
             }
             if (burgerBtn) burgerBtn.setAttribute('aria-expanded', 'false');
             if (userBtn)   userBtn.setAttribute('aria-expanded',   'false');

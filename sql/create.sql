@@ -77,6 +77,18 @@ CREATE TABLE IF NOT EXISTS password_reset (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ------------------------------------------------------------
+-- Tentatives de connexion (protection anti-brute-force)
+-- ------------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS login_attempt (
+    id         INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    email      VARCHAR(255) NOT NULL,
+    created_at DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id),
+    KEY idx_login_attempt_email_date (email, created_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ------------------------------------------------------------
 -- Programmes
 -- ------------------------------------------------------------
 

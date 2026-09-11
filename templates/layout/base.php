@@ -7,9 +7,32 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="/images/favicon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    <link rel="icon" type="image/webp" href="/images/ju2.webp">
+    <?php
+    // Icônes Font Awesome utilisées sur le site : dumbbell, image, location-dot,
+    // power-off, circle-user (solid + regular), comment-dots, whatsapp, instagram,
+    // facebook-f, eye, pen, trash. On ne charge que les feuilles de style nécessaires
+    // (fontawesome + solid + regular + brands) au lieu du bundle complet "all.min.css",
+    // et en chargement non bloquant car ce sont des icônes décoratives (aria-hidden).
+    $faBase = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/';
+    foreach (['fontawesome.min.css', 'solid.min.css', 'regular.min.css', 'brands.min.css'] as $faFile):
+    ?>
+    <link rel="preload" as="style" class="fa-preload" href="<?= $faBase . $faFile ?>"
           crossorigin="anonymous" referrerpolicy="no-referrer">
+    <?php endforeach; ?>
+    <script nonce="<?= CSP_NONCE ?>">
+        document.querySelectorAll('link.fa-preload').forEach(function (link) {
+            link.addEventListener('load', function () {
+                link.rel = 'stylesheet';
+            }, { once: true });
+        });
+    </script>
+    <noscript>
+        <link rel="stylesheet" href="<?= $faBase ?>fontawesome.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="stylesheet" href="<?= $faBase ?>solid.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="stylesheet" href="<?= $faBase ?>regular.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="stylesheet" href="<?= $faBase ?>brands.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    </noscript>
     <link rel="stylesheet" href="/css/main.css">
 
     <?php if (!empty($pageCss)): ?>
@@ -43,7 +66,7 @@ $flashError   = \Core\Session::getFlash('error');
     </div>
 <?php endif; ?>
 <?php if ($flashSuccess || $flashError): ?>
-    <script>
+    <script nonce="<?= CSP_NONCE ?>">
         setTimeout(() => {
             const el = document.getElementById('flashMsg');
             if (el) el.style.display = 'none';

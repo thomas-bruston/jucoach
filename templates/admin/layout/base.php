@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="icon" type="image/webp" href="/images/ju2.webp">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
           crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="/css/main.css">
@@ -40,7 +40,7 @@ $flashError   = \Core\Session::getFlash('error');
     </div>
 <?php endif; ?>
 <?php if ($flashSuccess || $flashError): ?>
-    <script>
+    <script nonce="<?= CSP_NONCE ?>">
         setTimeout(() => {
             const el = document.getElementById('flashMsg');
             if (el) el.style.display = 'none';
