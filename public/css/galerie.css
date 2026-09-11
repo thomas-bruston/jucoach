@@ -75,9 +75,10 @@
 }
 .galerie-videos h2 {
     font-family: var(--font-titre);
-    font-size: 1.8rem;
+    font-size: 2.5rem;
+    font-weight: 700;
     color: var(--color-or);
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
     margin-bottom: 32px;
     text-align: center;
 }
@@ -112,6 +113,77 @@
     font-size: 0.9rem;
     color: var(--color-texte);
     text-align: center;
+}
+
+/* ---- Lightbox ---- */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background-color: rgba(10, 10, 10, 0.92);
+    align-items: center;
+    justify-content: center;
+}
+.lightbox.open { display: flex; }
+
+.lightbox__img {
+    max-width: 85vw;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-hover);
+}
+
+.lightbox__legende {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--color-blanc);
+    font-family: var(--font-corps);
+    font-size: 0.95rem;
+    text-align: center;
+    max-width: 80vw;
+}
+
+.lightbox__close,
+.lightbox__prev,
+.lightbox__next {
+    position: absolute;
+    background: none;
+    border: none;
+    color: var(--color-blanc);
+    cursor: pointer;
+    transition: var(--transition);
+}
+.lightbox__close:hover,
+.lightbox__prev:hover,
+.lightbox__next:hover {
+    color: var(--color-or);
+}
+
+.lightbox__close {
+    top: 20px;
+    right: 24px;
+    font-size: 2.5rem;
+    line-height: 1;
+}
+
+.lightbox__prev,
+.lightbox__next {
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    padding: 10px;
+}
+.lightbox__prev { left: 16px; }
+.lightbox__next { right: 16px; }
+
+@media (max-width: 480px) {
+    .lightbox__close { top: 12px; right: 16px; font-size: 2rem; }
+    .lightbox__prev,
+    .lightbox__next { font-size: 1.5rem; }
 }
 
 /* ---- Admin galerie ---- */
@@ -161,7 +233,8 @@
 /* ---- Responsive ---- */
 @media (max-width: 768px) {
     .galerie-section { padding: 40px 20px; }
-    .galerie-header h1 { font-size: 2rem; }
+    .galerie-header h1,
+    .galerie-videos h2 { font-size: 2rem; }
     .galerie-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
     .galerie-videos-grid { grid-template-columns: 1fr; }
 }

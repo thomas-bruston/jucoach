@@ -73,7 +73,6 @@ class Router
         $this->add('GET',  '/admin/messages',                   'ContactController',   'adminIndex',         'administrateur');
 
         $this->add('POST', '/admin/message/supprimer',          'ContactController',   'delete',             'administrateur');
-        $this->add('GET',  '/admin/statistiques',               'AdminController',     'statistiques',       'administrateur');
     }
 
     /* Ajoute route */

@@ -9,7 +9,6 @@ use Core\Session;
 use Repository\UserRepository;
 use Repository\CommandeRepository;
 use Repository\QuestionnaireRepository;
-use Service\MongoService;
 
 /* AdminController */
 
@@ -18,14 +17,12 @@ class AdminController extends Controller
     private UserRepository          $userRepository;
     private CommandeRepository      $commandeRepository;
     private QuestionnaireRepository $questionnaireRepository;
-    private MongoService            $mongoService;
 
     public function __construct()
     {
         $this->userRepository          = new UserRepository();
         $this->commandeRepository      = new CommandeRepository();
         $this->questionnaireRepository = new QuestionnaireRepository();
-        $this->mongoService            = new MongoService();
     }
 
     /* Dashboard admin */
@@ -96,41 +93,5 @@ class AdminController extends Controller
 
         Session::setFlash('success', 'Client supprimé.');
         $this->redirect('/admin/clients');
-    }
-
-    /* Statistiques MongoDB */
-
-    public function statistiques(): void
-    {
-        $dateDebut = $this->get('date_debut', date('Y-01-01'));
-        $dateFin   = $this->get('date_fin',   date('Y-m-d'));
-
-        $commandesParProgramme = $this->mongoService->getNombreCommandesParProgramme();
-        $caParProgramme        = $this->mongoService->getCAParProgramme($dateDebut, $dateFin);
-
-        $statsParProgramme = [];
-        foreach ($commandesParProgramme as $cmd) {
-            $programmeId = $cmd['programme_id'];
-            $ca = 0;
-            foreach ($caParProgramme as $c) {
-                if ($c['programme_id'] === $programmeId) {
-                    $ca = $c['chiffre_affaires'];
-                    break;
-                }
-            }
-            $statsParProgramme[] = [
-                'programme_titre' => $cmd['programme_titre'],
-                'programme_type'  => $cmd['programme_type'],
-                'nb_commandes'    => $cmd['nombre_commandes'],
-                'ca_total'        => $ca,
-            ];
-        }
-
-        $this->render('admin/statistiques', [
-            'statsParProgramme' => $statsParProgramme,
-            'ca_total'          => $this->mongoService->getCATotalPeriode($dateDebut, $dateFin),
-            'dateDebut'         => $dateDebut,
-            'dateFin'           => $dateFin,
-        ]);
     }
 }

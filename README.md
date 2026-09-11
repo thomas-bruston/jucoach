@@ -7,7 +7,6 @@ Application web de coaching sportif e-commerce — Projet DWWM Titre Professionn
 - **Back-end** : PHP 8.3 (POO, sans framework)
 - **Front-end** : HTML5, CSS3, JavaScript ES6+ (vanilla)
 - **BDD relationnelle** : MySQL 8.0
-- **BDD non relationnelle** : MongoDB 7.0 
 - **Serveur web** : Nginx
 - **Conteneurisation** : Docker + Docker Compose
 - **Mails** : PHPMailer 6.x

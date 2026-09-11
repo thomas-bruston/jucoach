@@ -15,8 +15,6 @@ ob_start();
         <a href="/admin/messages" class="menu-btn">Messages</a>
 
         <a href="/admin/programmes" class="menu-btn">Programmes</a>
-        <a href="/admin/statistiques" class="menu-btn">Stats</a>
-
         <a href="/admin/galerie" class="menu-btn">Galerie</a>
         <a href="/deconnexion" class="menu-btn">Déconnexion</a>
 

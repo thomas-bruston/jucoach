@@ -2,13 +2,14 @@
 $title           = 'Galerie — Ju Coach Sportif';
 $metaDescription = 'Galerie photos et vidéos de Ju Coach Sportif à Nosy Be, Madagascar.';
 $pageCss         = 'galerie.css';
+$pageJs          = 'galerie.js';
 ob_start();
 ?>
 
 <section class="galerie-section">
 
     <div class="galerie-header">
-        <h1>GALERIE</h1>
+        <h1>PHOTOS</h1>
     </div>
 
     <!-- Photos -->
@@ -18,7 +19,9 @@ ob_start();
                 <figure class="galerie-item">
                     <img src="/images/galerie/<?= htmlspecialchars($photo->getFichier()) ?>"
                          alt="<?= htmlspecialchars($photo->getLegende() ?? 'Photo Ju Coach Sportif') ?>"
-                         loading="lazy">
+                         loading="lazy"
+                         class="galerie-item__img"
+                         data-legende="<?= htmlspecialchars($photo->getLegende() ?? '') ?>">
                     <?php if ($photo->getLegende()): ?>
                         <figcaption class="galerie-legende">
                             <?= htmlspecialchars($photo->getLegende()) ?>
@@ -54,6 +57,15 @@ ob_start();
     <?php endif; ?>
 
 </section>
+
+<!-- Lightbox photo -->
+<div id="lightbox" class="lightbox" aria-hidden="true">
+    <button type="button" class="lightbox__close" aria-label="Fermer">&times;</button>
+    <button type="button" class="lightbox__prev" aria-label="Photo précédente">&#8592;</button>
+    <img class="lightbox__img" src="" alt="">
+    <button type="button" class="lightbox__next" aria-label="Photo suivante">&#8594;</button>
+    <p class="lightbox__legende"></p>
+</div>
 
 <?php
 $content = ob_get_clean();

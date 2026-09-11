@@ -10,7 +10,6 @@ services:
       - .:/var/www/html
     depends_on:
       - mysql
-      - mongo
     networks:
       - jcs_network
     environment:
@@ -50,22 +49,6 @@ services:
     networks:
       - jcs_network
 
-  # MongoDB
-  mongo:
-    image: mongo:7.0
-    container_name: jcs_mongo
-    restart: unless-stopped
-    ports:
-      - "27018:27017"
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USER}
-      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD}
-      MONGO_INITDB_DATABASE: ${MONGO_DATABASE}
-    volumes:
-      - jcs_mongo_data:/data/db
-    networks:
-      - jcs_network
-
   # PhpMyAdmin (dev uniquement)
   phpmyadmin:
     image: phpmyadmin:latest
@@ -84,7 +67,6 @@ services:
 
 volumes:
   jcs_mysql_data:
-  jcs_mongo_data:
 
 networks:
   jcs_network:

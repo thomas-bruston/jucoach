@@ -11,7 +11,6 @@ services:
       - jcs_galerie_data:/var/www/html/public/images/galerie
     depends_on:
       - mysql
-      - mongo
     networks:
       - jcs_network
     environment:
@@ -52,22 +51,8 @@ services:
       - jcs_network
     # Pas de port exposé en prod
 
-  mongo:
-    image: mongo:7.0
-    container_name: jcs_mongo
-    restart: always
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USER}
-      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD}
-    volumes:
-      - jcs_mongo_data:/data/db
-    networks:
-      - jcs_network
-    # Pas de port exposé en prod
-
 volumes:
   jcs_mysql_data:
-  jcs_mongo_data:
   jcs_galerie_data:
 
 networks:

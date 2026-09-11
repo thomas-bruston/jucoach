@@ -14,14 +14,14 @@
                aria-label="Nous contacter">
                 <i class="fa-solid fa-comment-dots" aria-hidden="true"></i>
             </a>
-            <a href="https://wa.me/261320000000"
+            <a href="https://wa.me/261328209985"
                class="footer-social-link footer-social-link--whatsapp"
                target="_blank"
                rel="noopener noreferrer"
                aria-label="Contacter Ju sur WhatsApp (nouvel onglet)">
                 <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
             </a>
-            <a href="https://www.instagram.com/jucoachsportif"
+            <a href="https://www.instagram.com/jucoachsportifnosybe"
                class="footer-social-link footer-social-link--instagram"
                target="_blank"
                rel="noopener noreferrer"

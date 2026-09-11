@@ -9,21 +9,18 @@ use Core\Session;
 use Entity\Commande;
 use Repository\CommandeRepository;
 use Repository\ProgrammeRepository;
-use Service\MongoService;
 use Service\MailService;
 
 class CommandeController extends Controller
 {
     private CommandeRepository  $commandeRepository;
     private ProgrammeRepository $programmeRepository;
-    private MongoService        $mongoService;
     private MailService         $mailService;
 
     public function __construct()
     {
         $this->commandeRepository  = new CommandeRepository();
         $this->programmeRepository = new ProgrammeRepository();
-        $this->mongoService        = new MongoService();
         $this->mailService         = new MailService();
     }
 
@@ -63,17 +60,7 @@ class CommandeController extends Controller
             $commande->setProgrammeId($programmeId);
             $commande->setMontant($programme->getPrix());
 
-            $commandeId = $this->commandeRepository->create($commande);
-
-            // Enregistrement dans MongoDB pour les stats
-            $this->mongoService->enregistrerCommande(
-                $commandeId,
-                $programmeId,
-                $programme->getTitre(),
-                $programme->getType(),
-                date('Y-m-d'),
-                $programme->getPrix()
-            );
+            $this->commandeRepository->create($commande);
 
             // Mail de confirmation au client
             $this->mailService->sendConfirmationAchat(
