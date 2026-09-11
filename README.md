@@ -49,7 +49,7 @@ docker compose exec app composer install
 ## Comptes de test
 
 
- Administrateur  ju@jucoachsportif.com  Test12345! 
+ Administrateur  jucoaching@outlook.com  Test12345! 
  Utilisateur  client@test.com Test12345! 
  Utilisateur  client2@test.com Test12345! 
 

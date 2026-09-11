@@ -26,7 +26,7 @@ INSERT INTO role (id, libelle) VALUES
 INSERT INTO utilisateur (id, email, password, prenom, nom, telephone, adresse, statut, role_id) VALUES
 (
     1,
-    'ju@jucoachsportif.com',
+    'jucoaching@outlook.com',
     '$2y$10$NWpsQU6LnX9mtF5JBvECzu27ok2ZCfNeZCtP8VUNt3Tr/21b1.ZDq',
     'Julien',
     'Coach',
