@@ -7,6 +7,12 @@
             const el = document.getElementById(button.dataset.toggleForm);
             if (!el) return;
             el.style.display = el.style.display === 'none' ? 'block' : 'none';
+
+            // Le formulaire peut s'ouvrir hors écran (section vidéos en bas de page)
+            if (el.style.display === 'block') {
+                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                el.querySelector('input:not([type="hidden"])')?.focus({ preventScroll: true });
+            }
         });
     });
 
