@@ -8,7 +8,7 @@ ob_start();
 <section class="partenaire-section">
 
     <div class="partenaire-hero">
-        <img src="/images/banner.png"
+        <img src="/images/banner.webp"
              alt="Salle de sport à Nosy Be, Madagascar"
              class="partenaire-hero__image">
     </div>
