@@ -84,7 +84,7 @@ ob_start();
             <p>Cette action est définitive : vos informations personnelles, votre questionnaire et l'historique de vos programmes choisis seront supprimés. Elle ne peut pas être annulée.</p>
 
             <form class="auth-form" method="POST" action="/mon-profil/supprimer"
-                  onsubmit="return confirm('Confirmez-vous la suppression définitive de votre compte ?');">
+                  data-confirm="Confirmez-vous la suppression définitive de votre compte ?">
 
                 <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrf_token ?? '') ?>">
 

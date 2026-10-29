@@ -43,7 +43,7 @@ ob_start();
                     </p>
                 </div>
                 <form method="POST" action="/admin/client/supprimer"
-                      onsubmit="return confirm('Supprimer ce client définitivement ?')">
+                      data-confirm="Supprimer ce client définitivement ?">
                     <input type="hidden" name="csrf_token"
                            value="<?= htmlspecialchars($csrf_token ?? '') ?>">
                     <input type="hidden" name="user_id" value="<?= (int) $client->getId() ?>">

@@ -82,6 +82,7 @@ $flashError   = \Core\Session::getFlash('error');
 <?php require_once ROOT_PATH . '/templates/layout/footer.php'; ?>
 
 <script src="/js/header.js"></script>
+<script src="/js/confirm.js"></script>
 
 <?php if (!empty($pageJs)): ?>
 <script src="/js/<?= htmlspecialchars($pageJs) ?>"></script>

@@ -47,7 +47,7 @@ ob_start();
                            required autocomplete="current-password"
                            aria-required="true">
                     <button type="button" class="toggle-password"
-                            onclick="togglePassword('password', 'toggleIcon1')"
+                            data-toggle-password="password" data-icon="toggleIcon1"
                             aria-label="Afficher ou masquer le mot de passe">
                         <i class="fa-solid fa-eye" id="toggleIcon1" aria-hidden="true"></i>
                     </button>

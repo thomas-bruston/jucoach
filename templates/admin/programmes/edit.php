@@ -79,7 +79,7 @@ ob_start();
     <!-- Suppression -->
     <div class="footer-btn">
         <form method="POST" action="/admin/programme/supprimer"
-              onsubmit="return confirm('Désactiver ce programme ?')">
+              data-confirm="Désactiver ce programme ?">
             <input type="hidden" name="csrf_token"
                    value="<?= htmlspecialchars($_SESSION['csrf_token'] ?? '') ?>">
             <input type="hidden" name="programme_id"

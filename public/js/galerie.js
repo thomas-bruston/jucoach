@@ -1,11 +1,14 @@
 (function () {
     'use strict';
 
-    window.toggleForm = function (id) {
-        const el = document.getElementById(id);
-        if (!el) return;
-        el.style.display = el.style.display === 'none' ? 'block' : 'none';
-    };
+    // Affiche / masque les formulaires d'ajout (admin)
+    document.querySelectorAll('[data-toggle-form]').forEach((button) => {
+        button.addEventListener('click', () => {
+            const el = document.getElementById(button.dataset.toggleForm);
+            if (!el) return;
+            el.style.display = el.style.display === 'none' ? 'block' : 'none';
+        });
+    });
 
     // Lightbox galerie photos
 

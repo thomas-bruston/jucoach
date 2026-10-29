@@ -51,6 +51,8 @@ $flashError   = \Core\Session::getFlash('error');
 <!-- Contenu -->
 <?= $content ?>
 
+<script src="/js/confirm.js"></script>
+
 <?php if (!empty($pageJs)): ?>
     <script src="/js/<?= htmlspecialchars($pageJs) ?>"></script>
 <?php endif; ?>

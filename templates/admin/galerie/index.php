@@ -34,7 +34,7 @@ ob_start();
                          loading="lazy">
                     <p class="admin-gallery-titre"><?= htmlspecialchars($photo->getLegende() ?? '—') ?></p>
                     <form method="POST" action="/admin/galerie/photo/supprimer"
-                          onsubmit="return confirm('Supprimer cette photo ?')">
+                          data-confirm="Supprimer cette photo ?">
                         <input type="hidden" name="csrf_token"
                                value="<?= htmlspecialchars($csrf_token ?? '') ?>">
                         <input type="hidden" name="photo_id"
@@ -51,7 +51,7 @@ ob_start();
 
     <!-- Ajouter une photo -->
     <div class="admin-add-section">
-        <button class="btn-save" onclick="toggleForm('add-photo')">+ Ajouter une photo</button>
+        <button class="btn-save" data-toggle-form="add-photo">+ Ajouter une photo</button>
         <div id="add-photo" style="display:none; margin-top:1rem;">
             <form method="POST" action="/admin/galerie/photo/ajouter"
                   enctype="multipart/form-data" class="edit-form-content">
@@ -73,7 +73,7 @@ ob_start();
                 <div class="form-buttons">
                     <button type="submit" class="btn-save">AJOUTER</button>
                     <button type="button" class="btn-cancel"
-                            onclick="toggleForm('add-photo')">Annuler</button>
+                            data-toggle-form="add-photo">Annuler</button>
                 </div>
             </form>
         </div>
@@ -113,7 +113,7 @@ ob_start();
                             </td>
                             <td class="tableContentItem">
                                 <form method="POST" action="/admin/galerie/video/supprimer"
-                                      onsubmit="return confirm('Supprimer cette vidéo ?')">
+                                      data-confirm="Supprimer cette vidéo ?">
                                     <input type="hidden" name="csrf_token"
                                            value="<?= htmlspecialchars($csrf_token ?? '') ?>">
                                     <input type="hidden" name="video_id"
@@ -133,7 +133,7 @@ ob_start();
 
     <!-- Ajouter une vidéo -->
     <div class="admin-add-section">
-        <button class="btn-save" onclick="toggleForm('add-video')">+ Ajouter une vidéo</button>
+        <button class="btn-save" data-toggle-form="add-video">+ Ajouter une vidéo</button>
         <div id="add-video" style="display:none; margin-top:1rem;">
             <form method="POST" action="/admin/galerie/video/ajouter" class="edit-form-content">
                 <input type="hidden" name="csrf_token"
@@ -160,7 +160,7 @@ ob_start();
                 <div class="form-buttons">
                     <button type="submit" class="btn-save">AJOUTER</button>
                     <button type="button" class="btn-cancel"
-                            onclick="toggleForm('add-video')">Annuler</button>
+                            data-toggle-form="add-video">Annuler</button>
                 </div>
             </form>
         </div>

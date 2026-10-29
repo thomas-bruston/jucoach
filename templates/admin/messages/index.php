@@ -44,7 +44,7 @@ ob_start();
                         <td class="tableContentItem">
                             <form method="POST"
                                   action="/admin/message/supprimer"
-                                  onsubmit="return confirm('Supprimer ce message ?')">
+                                  data-confirm="Supprimer ce message ?">
                                 <input type="hidden" name="csrf_token"
                                        value="<?= htmlspecialchars($_SESSION['csrf_token'] ?? '') ?>">
                                 <input type="hidden" name="contact_id"

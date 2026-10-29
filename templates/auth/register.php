@@ -87,7 +87,7 @@ ob_start();
                            aria-required="true"
                            aria-describedby="password-rules">
                     <button type="button" class="toggle-password"
-                            onclick="togglePassword('password', 'toggleIcon1')"
+                            data-toggle-password="password" data-icon="toggleIcon1"
                             aria-label="Afficher ou masquer le mot de passe">
                         <i class="fa-solid fa-eye" id="toggleIcon1" aria-hidden="true"></i>
                     </button>
@@ -106,7 +106,7 @@ ob_start();
                            aria-required="true"
                            aria-describedby="<?= !empty($errors['password']) ? 'password-error' : '' ?>">
                     <button type="button" class="toggle-password"
-                            onclick="togglePassword('password_confirm', 'toggleIcon2')"
+                            data-toggle-password="password_confirm" data-icon="toggleIcon2"
                             aria-label="Afficher ou masquer la confirmation">
                         <i class="fa-solid fa-eye" id="toggleIcon2" aria-hidden="true"></i>
                     </button>
