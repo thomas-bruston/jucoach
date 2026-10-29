@@ -29,3 +29,7 @@ docker/nginx/ssl/
 
 # phpMyAdmin config local
 docker/phpmyadmin/
+
+# Documents Apple Pages
+*.pages
+.phpunit.result.cache
