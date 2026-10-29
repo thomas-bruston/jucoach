@@ -36,6 +36,7 @@ header(
     "font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; " .
     "img-src 'self' data:; " .
     "connect-src 'self'; " .
+    "frame-src https://www.youtube.com; " .
     "frame-ancestors 'self'; " .
     "base-uri 'self'; " .
     "form-action 'self';"
